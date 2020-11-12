@@ -9,6 +9,7 @@ const homeController = require('../controllers/home_controller')
 
 router.get('/', homeController.home)
 
-
+// home.ejs POST method url  line number 15
+router.post('/shortUrls', )
 
 module.exports = router;
