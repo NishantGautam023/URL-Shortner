@@ -1,15 +1,13 @@
 const express = require('express');
 const port = 8000;
+const path = require('path')
+
+//  ********Requiring our models***************** 
+const Urls = require('./models/urls')
+
+/* ******* Including the database from config/mongoose.js   */
+const db = require('./config/mongoose');
 const app = express();
-
-/* ******* setting up our database    https://mongoosejs.com/docs/ *********  */
-
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/urlShortneer', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true 
-    // The above 2 statements helps us to avoid  the Deprecation Warning !!!
-})
 
 // ***********Setting up our view engine********
 app.set('view engine', 'ejs')
