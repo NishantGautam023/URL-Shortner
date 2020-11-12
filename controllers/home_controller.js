@@ -16,7 +16,25 @@ module.exports.shortUrls = async (req, res) => {
   res.redirect('/') // redirect to the homepage
 }
 
+module.exports.shortUrl =  async function(req, res) {
+  //  use our model to find one based on short property.
+  const shortUrl =  await Urls.findOne({   short: req.params.shortUrl });
+  // calling findone method in our database, passing in our search query  which is telling
+  // find which ever is having short id from our url(shortUrl) and save it to const shortUrl
 
+
+  // if url does not exists
+  if(shortUrl ==null)  {
+    return res.sendStatus(404)
+  }
+  // if found the url
+  shortUrl.clicks++ // append one to the clicks
+  shortUrl.save()  // update the url with new click value
+
+  res.redirect(shortUrl.full) // getting the full and redirecting to it. 
+   
+
+}
 
 
 
