@@ -6,6 +6,9 @@ const port = 8000;
 app.set('view engine', 'ejs')
 app.set('views', './views')
 
+// ********* static files and parsing the form data
+app.use(express.urlencoded());
+app.use(express.static('assets')) // only on require we use './'
 
 
 // **********using express router ********************
