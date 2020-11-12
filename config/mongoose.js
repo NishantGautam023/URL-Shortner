@@ -4,7 +4,7 @@
 const mongoose = require('mongoose');
 
 // connect to the database
-mongoose.connect('mongodb://localhost/urlShortneer', {
+mongoose.connect('mongodb://localhost/urlShortener', {
     useNewUrlParser: true,
     useUnifiedTopology: true 
     // The above 2 statements helps us to avoid  the Deprecation Warning !!!

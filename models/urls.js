@@ -4,7 +4,7 @@
 
 
 const mongoose = require('mongoose');
-const nanoId = require('nanoid')
+const shortId = require('shortid')
 const shortUrlSchema = new mongoose.Schema({
     // this schema takes an object, which is going to be all of our columns in the database
     full: {
@@ -14,7 +14,7 @@ const shortUrlSchema = new mongoose.Schema({
     short: {
         type: String,
         required: true,
-        default: nanoId.nanoid()
+        default: shortId.generate
     },
     clicks: {
         type: Number,
