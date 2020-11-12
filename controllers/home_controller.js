@@ -1,7 +1,12 @@
 const Urls = require('../models/urls')
 
-module.exports.home = function(req,res) {
-    res.render('home')
+module.exports.home = async function(req,res) {
+    // When we hit the submit button, url was not showing up, to show our url 
+    const Urls_short = await Urls.find()  
+    res.render('home', {
+      Urls_short: Urls_short
+      // now we can loop through every single short Urls in the home.ejs
+    })
 }
 
 // Action for Short urls

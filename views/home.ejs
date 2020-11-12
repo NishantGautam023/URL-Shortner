@@ -43,24 +43,30 @@
 					<th class="p-3 text-left">Short URL</th>
 					<th class="p-3 text-left" width="110px">Clicks</th>
 				</tr>
-				<tr class="bg-teal-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-					<th class="p-3 text-left">Full URL</th>
-					<th class="p-3 text-left">Short URL</th>
-					<th class="p-3 text-left" width="110px">Clicks</th>
-				</tr>
+				
            
 			</thead>
 			<tbody class="flex-1 sm:flex-none">
-				<tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-					<td class="border-grey-light border hover:bg-gray-100 p-3"><a href="https://github.com/NishantGautam023">https://github.com/NishantGautam023</a></td>
-					<td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><a href="/123456">123456</a></td>
-					<td class="border-grey-light border hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">10</td>
-				</tr>
-				<tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-					<td class="border-grey-light border hover:bg-gray-100 p-3"><a href="https://github.com/">https://github.com/</a></td>
-					<td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><a href="/12345677">12apl</a></td>
-					<td class="border-grey-light border hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">5</td>
-				</tr>
+                <!-- ********Looping through the every single urls_short (home_controller.js line 7) ************ -->
+                    <% Urls_short.forEach(Urls => { %>
+                     
+                        <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                            <td class="border-grey-light border hover:bg-gray-100 p-3"><a href=" <%= Urls.full  %>    "> <%= Urls.full  %> </a></td>
+                            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><a href=" <%= Urls.short  %>  "><%= Urls.short  %> </a></td>
+                            <td class="border-grey-light border hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
+                                <%= Urls.clicks %> 
+                            </td>
+                        </tr>
+
+
+                    <% }) %>
+
+
+
+
+
+				
+			
                
 			</tbody>
 		</table>
