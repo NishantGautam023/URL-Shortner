@@ -7,7 +7,7 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 <!-- Since we have already given till asset structure -->
 
-    <title>Document</title>
+    <title>URL Shortener</title>
 </head>
 
 <body>  
@@ -52,7 +52,7 @@
                      
                         <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
                             <td class="border-grey-light border hover:bg-gray-100 p-3"><a href=" <%= Urls.full  %>    "> <%= Urls.full  %> </a></td>
-                            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><a href=" <%= Urls.short  %>  "><%= Urls.short  %> </a></td>
+                            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><a target="_blank" href=" <%= Urls.short  %>  "><%= Urls.short  %>  </a></td>
                             <td class="border-grey-light border hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
                                 <%= Urls.clicks %> 
                             </td>
