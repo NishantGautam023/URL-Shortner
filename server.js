@@ -1,5 +1,7 @@
+require('dotenv').config();
 const express = require('express');
 const port =  process.env.PORT || 3000;
+//Whatever port is there run my application  or use 3000. for Deployment Purpose.
 const path = require('path')
 
 //  ********Requiring our models***************** 
